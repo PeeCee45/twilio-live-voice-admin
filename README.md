@@ -29,7 +29,7 @@ A **serverless Twilio voice response manager** built for **Vercel** using **Redi
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/twilio-live-voice-admin.git
+git clone https://github.com/PeeCee45/twilio-live-voice-admin.git
 cd twilio-live-voice-admin
 ```
 
@@ -66,7 +66,7 @@ vercel
 ```
 
 - Follow the prompts to link your project or create a new one.  
-- Once deployed, your live app will be available at: `https://<your-vercel-domain>/api`
+- Once deployed, your live app will be available at: `https://twilio-live-voice-admin.vercel.app/api`
 
 ---
 
@@ -75,7 +75,7 @@ vercel
 - Set your Twilio number's **voice webhook URL** to:
 
 ```text
-https://<your-vercel-domain>/api/voice
+https://twilio-live-voice-admin.vercel.app/api/voice
 ```
 
 - Use the **POST** method for the webhook.  
@@ -86,7 +86,7 @@ https://<your-vercel-domain>/api/voice
 7. **Access Admin UI**
 
 ```text
-https://<your-vercel-domain>/api
+https://twilio-live-voice-admin.vercel.app/api
 ```
 
 - Type your message, select a voice, and save. The changes will be used live for incoming calls.
