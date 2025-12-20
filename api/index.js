@@ -1,4 +1,4 @@
-import { client } from "./kv.js";
+import { client } from "../kv.js";
 
 const voices = [
   { value: "alice", label: "Alice (default)" },
