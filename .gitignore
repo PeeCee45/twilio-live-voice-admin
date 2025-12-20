@@ -9,6 +9,7 @@ pnpm-debug.log*
 
 # Environment variables
 .env
+.env.local
 
 # Vercel build output
 .vercel/
@@ -21,3 +22,5 @@ Thumbs.db
 # Lock files (optional, only if you prefer to regenerate)
 # package-lock.json
 # yarn.lock
+.vercel
+.env*.local
