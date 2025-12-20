@@ -1,21 +1,27 @@
-import { client } from "../kv.js";
+import { getRedisClient } from './kv.js';
 
 const voices = [
-  { value: "alice", label: "Alice (default)" },
-  { value: "man", label: "Man" },
-  { value: "woman", label: "Woman" },
-  { value: "alloy", label: "Alloy" },
+  { value: 'alice', label: 'Alice (default)' },
+  { value: 'man', label: 'Man' },
+  { value: 'woman', label: 'Woman' },
+  { value: 'alloy', label: 'Alloy' },
 ];
 
 export default async function handler(req, res) {
-  const text = (await client.get("live_response")) || "Hello, default message.";
-  const selectedVoice = (await client.get("voice_selected")) || "alice";
+  if (req.method !== 'GET') {
+    res.status(405).send('Method Not Allowed');
+    return;
+  }
+
+  const client = await getRedisClient();
+  const text = (await client.get('live_response')) || 'Hello, default message.';
+  const selectedVoice = (await client.get('voice_selected')) || 'alice';
 
   const options = voices
-    .map(v => `<option value="${v.value}" ${v.value === selectedVoice ? "selected" : ""}>${v.label}</option>`)
-    .join("");
+    .map(v => `<option value="${v.value}" ${v.value === selectedVoice ? 'selected' : ''}>${v.label}</option>`)
+    .join('');
 
-  res.setHeader("Content-Type", "text/html");
+  res.setHeader('Content-Type', 'text/html');
   res.status(200).send(`
     <!DOCTYPE html>
     <html lang="en">
