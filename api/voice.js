@@ -1,4 +1,4 @@
-import { getRedisClient } from '../kv.js';
+import { getRedisClient } from './kv.js';
 
 export default async function handler(req, res) {
   const client = await getRedisClient();

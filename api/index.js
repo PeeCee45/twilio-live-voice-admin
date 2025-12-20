@@ -1,4 +1,4 @@
-import { getRedisClient } from '../kv.js';
+import { getRedisClient } from './kv.js';
 
 const voices = [
   { value: 'alice', label: 'Alice (default)' },
