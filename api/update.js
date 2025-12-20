@@ -1,5 +1,5 @@
 // api/update.js
-import { getRedisClient } from './api/kv.js';
+import { getRedisClient } from './kv.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
